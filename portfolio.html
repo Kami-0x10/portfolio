@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows XP Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+    <style>
+        body {
+            font-family: 'MS Sans Serif', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #008080;
+            //background: url('./wallpaper/wallpaper.png') no-repeat center center fixed;
+            background-size: cover;
+            overflow-y: auto;
+            height: 100vh;
+        }
+        .desktop {
+            position: relative;
+            padding: 20px;
+        }
+        .desktop-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            width: 80px;
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .desktop-icon img {
+            width: 48px;
+            height: 48px;
+        }
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: #c0c0c0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            border-top: 2px solid black;
+        }
+        .start-button {
+            background: #c0c0c0;
+            color: black;
+            padding: 5px 10px;
+            border: 2px solid black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #start-menu {
+            display: none;
+            position: fixed;
+            bottom: 40px;
+            left: 0;
+            background: #c0c0c0;
+            width: 200px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        #start-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        #start-menu ul li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+	.container {
+  	    display: flex;
+            justify-content: center;
+  	    align-items: center;
+            margin-bottom: 20px;
+ 	}
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <div class="desktop-icon" onclick="location.reload();">
+            <img src="./icon/recycle_bin.png" alt="Recycle Bin">
+            <span>ごみ箱</span>
+        </div>
+
+        <div>
+    	    <h1>Kami-0x10 site</h1>
+    	    <br>
+            <div id = 'section1'>
+            	<h2>セクション1</h2>
+
+　　	    	<p>こんなことをしています①<br>
+            
+                <div class="container">
+		    <img src="./img/simpdon_screenshot1.png">
+                </div>
+                <div class="container">
+		    <img src="./img/simpdon_screenshot2.png">
+                </div>
+                <div class="container">
+		    <img src="./img/simpdon_screenshot3.png">
+                </div>
+
+		<a href="https://kami-0x10.github.io/simpdon/login.html">リンク</a>
+		<p>XPやiOS6等の古いデバイスで動くSNSクライアントを製作</p>
+
+		<p>テスト用アカウントurl: https://mstdn.social</p>
+
+		<p>アクセストークン: jDUt6DxXL3kC3xIaQXceEC8pXGaSkzQaWTfwgzftfJM</p>
+
+		<p>テスト用アカウントですのでアクセストークン等、他言しないようお願いいたします。</p>
+    	    	<br>
+            </div>
+
+            <div id = 'section2'>
+            	<h2>セクション2</h2>
+		<p>こんなことをしています②</p>
+
+                <div class="container">
+		    <img src="./img/JSNS_screenshot1.png">
+                </div>
+                <p>自作のSNSを作成しております</p>
+                <div class="container">
+		    <img src="./img/JSNS_screenshot2.png">
+                </div>
+                <p>基本的なところは作りこみました</p>
+            </div>
+
+            <div id = 'section3'>
+            	<h2>セクション3</h2>
+		<p>こんなことをしています③<br>
+                <div class="container">
+		    <img src="./img/book.jpg">
+                </div>
+                <p>まあ生い立ち柄、SNSとかOSSが好きなので、コミケでこんなものもらったり</p>
+                <div class="container">
+		    <img src="./img/vrc.jpg">
+                </div>
+                <p>息抜きがてらVRChatやったりしています</p>
+    	    	<br>
+    	    	<br> 
+    	    	<br>
+    	    	<br>               
+            </div>
+
+	</div>
+
+    </div>
+    
+    <div id="start-menu">
+        <ul>
+            <li onclick="document.getElementById('section1').scrollIntoView();">セクション1</li>
+            <li onclick="document.getElementById('section2').scrollIntoView();">セクション2</li>
+            <li onclick="document.getElementById('section3').scrollIntoView();">セクション3</li>
+        </ul>
+    </div>
+    
+    <div class="taskbar">
+        <div class="start-button" onclick="toggleStartMenu()">スタート</div>
+    </div>
+
+    <script>
+        function toggleStartMenu() {
+            let menu = document.getElementById("start-menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

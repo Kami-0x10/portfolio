@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+    <style>
+        @font-face {
+            font-family: 'MS Sans Serif';
+            src: url('https://example.com/ms-sans-serif.woff2');
+        }
+        body {
+            font-family: 'MS Sans Serif', sans-serif;
+            background: teal;
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+        }
+        .splash-window {
+            width: 300px;
+            padding: 10px;
+            background: white;
+            border: 2px solid black;
+            text-align: center;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function spawnPopups() {
+            for (let i = 0; i < 15; i++) {
+                let popup = document.createElement("div");
+                popup.className = "window splash-window";
+                popup.style.top = Math.random() * (window.innerHeight - 100) + "px";
+                popup.style.left = Math.random() * (window.innerWidth - 300) + "px";
+                popup.innerHTML = `
+                    <div class="title-bar">
+                        <div class="title-bar-text">System Alert</div>
+                    </div>
+                    <div class="window-body">
+                        <p>Critical Error!</p>
+                    </div>
+                `;
+                document.body.appendChild(popup);
+            }
+        }
+        window.onload = function() {
+            spawnPopups();
+            setTimeout(() => {
+                window.location.href = 'portfolio.html';
+            }, 5000);
+        };
+    </script>
+</body>
+</html>
